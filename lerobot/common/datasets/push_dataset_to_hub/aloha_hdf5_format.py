@@ -85,7 +85,8 @@ def load_from_raw(
     encoding: dict | None = None,
 ):
     # only frames from simulation are uncompressed
-    compressed_images = "sim" not in raw_dir.name
+    # compressed_images = "sim" not in raw_dir.name
+    compressed_images = False
 
     hdf5_files = sorted(raw_dir.glob("episode_*.hdf5"))
     num_episodes = len(hdf5_files)
@@ -231,3 +232,12 @@ def from_raw_to_lerobot_format(
         info["encoding"] = get_default_encoding()
 
     return hf_dataset, episode_data_index, info
+
+
+if __name__ == "__main__":
+    raw_dir = Path("/home/ns1254/act/dataset")
+    hf_dataset, episode_data_index, info = from_raw_to_lerobot_format(raw_dir, None, 20, False)
+    print(hf_dataset)
+    print(episode_data_index)
+    print(info)
+
