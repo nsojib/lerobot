@@ -667,3 +667,9 @@ def train_notebook(out_dir=None, job_name=None, config_name="default", config_pa
 
 if __name__ == "__main__":
     train_cli()
+
+
+# python lerobot/scripts/train.py policy=act_pusht env=pusht
+# python lerobot/scripts/train.py   policy=vqbet   env=pusht dataset_repo_id=lerobot/pusht   wandb.enable=true   device=cuda
+# python lerobot/scripts/train.py policy=diffusion env=pusht
+# INFO 2024-11-08 22:02:06 ts/train.py:226 step:200K smpl:13M ep:103K epch:499.03 ∑rwrd:103.757 success:64.0% eval_s:73.348
