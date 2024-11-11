@@ -37,6 +37,7 @@ def create_stats_buffers(
     for key, mode in modes.items():
         assert mode in ["mean_std", "min_max"]
 
+        # print('key:', key)
         shape = tuple(shapes[key])
 
         if "image" in key:
